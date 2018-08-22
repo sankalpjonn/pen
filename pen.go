@@ -57,10 +57,10 @@ func (self *Pen) initLogger() error {
 	} else if self.path != path {
 		if self.fp != nil {
 			self.fp.Close()
-			self.fp = nil
-			self.logger = nil
-			return self.initLogger()
 		}
+		self.fp = nil
+		self.logger = nil
+		return self.initLogger()
 	}
 	return nil
 }
