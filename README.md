@@ -27,17 +27,18 @@ The example below logs to a file with (%Y%m%d) format:
 package main
 
 import (
-	"github.com/sankalpjonn/pen"
+    "github.com/sankalpjonn/pen"
 )
 
 func main() {
-	pen := New("LOG-PREFIX", "/tmp/log.%Y%m%d")
-	pen.Write("foo")
-	pen.Write("bar")
+    p := pen.New("LOG-PREFIX", "/tmp/log.%Y%m%d")
+    p.Write("foo")
+    p.Write("bar")
 
   // to close the pen
-	pen.Lid()
+    p.Lid()
 }
+
 
 ```
 
