@@ -51,7 +51,6 @@ func (self *Pen) initLogger() error {
 		}
 		self.fp = fp
 		self.logger = log.New(self.fp, "", 0)
-		self.logger.SetPrefix(time.Now().Format("2006-01-02 15:04:05") + " [" + self.prefix + "] ")
 
 		self.path = path
 	} else if self.path != path {
@@ -70,7 +69,7 @@ func (self *Pen) Write(content string) error {
 	if err != nil {
 		return err
 	}
-	self.logger.Println(content)
+	self.logger.Println(time.Now().Format("2006-01-02 15:04:05")+" ["+self.prefix+"] ", content)
 	return nil
 }
 
